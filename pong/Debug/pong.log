@@ -1,30 +1,34 @@
 ﻿  main.cpp
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(4,18): warning C4305: инициализация: усечение из "double" в "float"
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(6,16): warning C4091: typedef : пропускается слева от "sprite", когда ни одна переменная не объявлена
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(42,26): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(45,31): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(64,33): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(65,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(109,10): warning C4101: hbm: неиспользованная локальная переменная
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(138,89): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(138,75): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(138,65): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(138,38): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(139,83): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(139,69): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(139,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(139,36): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(149,68): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(149,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(149,46): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(149,37): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(157,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(158,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(186,21): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(191,21): warning C4305: *=: усечение из "double" в "float"
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(208,34): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(229,10): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(232,14): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(239,16): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\pong\main.cpp(240,16): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-  pong.vcxproj -> C:\Users\niki4\Downloads\pong-nik_arc\pong-nik_arc — копия\Debug\pong.exe
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(4,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(6,16): warning C4091: 'typedef ': ignored on left of 'sprite' when no variable is declared
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(43,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(46,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(65,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(66,37): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(110,10): warning C4101: 'hbm': unreferenced local variable
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(139,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(139,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(139,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(139,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(140,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(140,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(140,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(140,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(150,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(150,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(150,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(150,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(158,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(159,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(187,21): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(192,21): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(209,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(234,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(246,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(258,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(259,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(264,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(264,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(429,20): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\student-3\source\repos\nikk\pong\main.cpp(430,20): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
+  pong.vcxproj -> C:\Users\student-3\source\repos\nikk\Debug\pong.exe

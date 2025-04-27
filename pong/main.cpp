@@ -45,7 +45,7 @@ void InitGame()
 
 	ball.dy = (rand() % 65 + 35) / 100.;
 	ball.dx = (1 - ball.dy);
-	ball.speed = 11;
+	ball.speed = 111;
 	ball.rad = 10; //уменьшил радиус шарика
 	ball.x = racket.x;
 	ball.y = racket.y - ball.rad;
@@ -225,77 +225,133 @@ bool flipdy = false;
 
 void CheckBlocks()
 {
+	bool isCollision = false;
+	float fX = ball.x;
+	float fY = ball.y;
+
 	float deltaX = ball.dx * ball.speed;
 	float deltaY = ball.dy * ball.speed;
 	float L = sqrt(deltaX * deltaX + deltaY * deltaY);
 
 	int points_count = 16;
-	float alpha = PI / 2 + atan2(ball.dy, ball.dx); //угол первой точки
-	float beta = PI / (points_count - 1); //угол смещения точек относительно центра шарика
+	
+	int lastBlockX = -1;
+	int lastBlockY = -1;
+		
+	collisionDetected = false;
+		
 
-	for (int point = 0; point < points_count; point++) //points_count точек
+	for (float i = 0; i < L; i += 3) //L точек уже на луче
 	{
-		float angle = alpha - point * beta; //смещаем угол для новой точки
+		float alpha = PI / 2 + atan2(deltaY, deltaX); //угол первой точки
+		float beta = PI / (points_count - 1); //угол смещения точек относительно центра шарика
+		collisionDetected = false;
 
-		float pointX = ball.x + ball.rad * cos(angle); //находим координаты новой точки
-		float pointY = ball.y + ball.rad * sin(angle);		
-
-		for (float i = 0; i < L; i += L / 16) //L точек уже на луче
+		for (int point = 0; point < points_count; point++) //points_count точек
 		{
+
+			if (collisionDetected) break;
+
+			float angle = alpha - point * beta; //смещаем угол для новой точки
+
+
+			float pointX = fX + ball.rad * cos(angle); //находим координаты новой точки
+			float pointY = fY + ball.rad * sin(angle);
+
 			float ddx = i / L * deltaX; //бежим последовательно по лучу
 			float ddy = i / L * deltaY;
 
+			SetPixel(window.context, pointX + ddx, pointY + ddy, RGB(255, 255, 127));
+
 			for (int y = 0; y < dimY; y++) //строки блоков
 			{
+				if (collisionDetected) break;
+
 				for (int x = 0; x < dimX; x++) //столбцы блоков
 				{
+					if (collisionDetected) break;
+
+
 					if (blocks[y][x].status)
 					{
 						sprite& block = blocks[y][x]; //потенциальный для коллизии блок
 
 						if ((pointX + ddx >= block.x) && (pointX + ddx <= block.x + block.width) && //x проверка коллизии
-							(pointY + ddy >= block.y) && (pointY + ddy <= block.y + block.height)) //y проверка коллизии
+							(pointY + ddy >= block.y) && (pointY + ddy <= block.y + block.height) &&
+							x != lastBlockX && y != lastBlockY) //y проверка коллизии
 						{
-							block.status = false; //выключение блока
+							lastBlockX = x;
+							lastBlockY = y;
+							//block.status = false; //выключение блока
 
 							collisionDetected = true; //сообщаем о коллизии
 
-							/*float minX = min(block.x + block.width - (pointX + ddx), pointX + ddx - block.x);
+							float minX = min(block.x + block.width - (pointX + ddx), pointX + ddx - block.x);
 							float minY = min(block.y + block.height - (pointY + ddy), pointY + ddy - block.y);
 
 							if (minX < minY)
 							{
-								pathY = deltaY;
-								pathX = 2 * ddx - deltaX;
+								//pathY = deltaY;
+								//pathX = 2 * ddx - deltaX;
 								flipdx = true;
+
+								if (deltaX < 0)
+								{
+									float d = pointX - (block.x + block.width);
+									fX = pointX - d * 2;
+								}
+								else
+								{
+									float d = block.x - pointX;
+									fX = pointX + d * 2;
+								}
+
+								deltaX *= -1;
 							}
 							else
 							{
-								pathX = deltaX;
-								pathY = 2 * ddy - deltaY;
+								//pathX = deltaX;
+								//pathY = 2 * ddy - deltaY;
 								flipdy = true;
-							}*/
 
-							if (ball.y >= block.y + block.height || ball.y <= block.y)
-							{
-								pathX = deltaX;
-								pathY = 2 * ddy - deltaY;
-								flipdy = true;
-							}
-							else
-							{
-								pathY = deltaY;
-								pathX = 2 * ddx - deltaX;
-								flipdx = true;
+
+								if (deltaY < 0)
+								{
+									float d = pointY - (block.y + block.height);
+									fY = pointY - d * 2;
+								}
+								else
+								{
+									float d = block.y - pointY;
+									fY = pointY + d * 2;
+								}
+
+								deltaY *= -1;
 							}
 
-							return;
+
+							ddx = i / L * deltaX; //бежим последовательно по лучу
+							ddy = i / L * deltaY;
+
 						}
 					}
 				}
 			}
 		}
 	}
+
+	if (collisionDetected)
+	{
+	//	ball.x = fX;
+	//	ball.y = fY;
+	}
+	else
+	{
+	//	ball.x += ball.dx * ball.speed;
+	//	ball.y += ball.dy * ball.speed;
+	}
+
+	isCollision = false;
 }
 
 void ProcessRoom()
@@ -367,16 +423,24 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 	while (!GetAsyncKeyState(VK_ESCAPE))
 	{
-		BitBlt(window.device_context, 0, 0, window.width, window.height, window.context, 0, 0, SRCCOPY);
+		POINT mousePos;
+		GetCursorPos(&mousePos);
+
+		ball.x = mousePos.x;
+		ball.y = mousePos.y;
+
 		ShowRacketAndBall();
+		ProcessRoom();
+		BitBlt(window.device_context, 0, 0, window.width, window.height, window.context, 0, 0, SRCCOPY);
+
 		ShowScore();
 
 		Sleep(17);
 
 		ProcessInput();
 		LimitRacket();
-		ProcessRoom();
-		ProcessBall();
+		
+		//ProcessBall();
 	}
 
 	ReleaseDC(window.hWnd, window.context);
